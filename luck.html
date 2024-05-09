@@ -12,7 +12,7 @@
       <img src="" alt="Random Image" id="randomImage">
     </div>
   </div>
-
+  <button id="shareButton">트위터에 공유</button>
   <a href="event.html">
     <button>back</button>
   </a>
@@ -28,6 +28,13 @@
     // 이미지 요소에 경로 설정
     var randomImage = document.getElementById('randomImage');
     randomImage.src = imagePath;
+
+    // 트위터 공유 버튼 클릭 이벤트 핸들러
+    document.getElementById('shareButton').addEventListener('click', function() {
+      var hashtags = 'FCFW,니콜라스'; // 원하는 해시태그 추가
+            var shareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&hashtags=' + encodeURIComponent(hashtags);
+            window.open(shareUrl, '_blank');
+        });
 </script>
 </body>
 </html>
