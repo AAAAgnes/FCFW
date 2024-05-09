@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FCFW</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img src="" alt="Random Image" id="randomImage">
+    </div>
+  </div>
+
+  <a href="event.html">
+    <button>back</button>
+  </a>
+
+  <script>
+    // URL에서 이미지 번호 가져오기
+    var params = new URLSearchParams(window.location.search);
+    var imageNumber = params.get('image');
+
+    // 이미지가 있는 경로 설정
+    var imagePath = "image/random/" + imageNumber + ".png";
+
+    // 이미지 요소에 경로 설정
+    var randomImage = document.getElementById('randomImage');
+    randomImage.src = imagePath;
+</script>
+</body>
+</html>

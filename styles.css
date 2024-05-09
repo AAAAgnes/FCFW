@@ -15,6 +15,10 @@ body {
 
 }
 
+a {
+  text-decoration: none; /* 링크 텍스트의 밑줄 제거 */
+}
+
 @media screen and (min-width: 1200px) {
   body{
    /* display: flex; */
@@ -110,12 +114,46 @@ p#feedback {
   width: 70%;
 }
 
+#event{
+  display: flex;
+  color: white;
+  border: none;
+  width: 30%;
+}
+
+#clickhere{
+  display: flex;
+  color: white;
+  border: none;
+  width: 70%;
+}
+
+#eventBox{
+  display: flex;
+  color: white;
+  border: none;
+  width: 30%;
+}
+
+@keyframes shake {
+  0% { transform: translateY(-3px); }
+  25% { transform: translateY(3px); }
+  50% { transform: translateY(-3px); }
+  75% { transform: translateY(3px); }
+  100% { transform: translateY(-3px); }
+}
+
+.event-box:hover {
+  animation: shake 0.5s infinite; /* 마우스 호버 시 shake 애니메이션 적용 */
+}
+
 .main-button {
   display: flex;
   color: white;
   border: none;
   width: 40%;
 }
+
 
 @media screen and (max-width: 757px) {
   .main-logo {
@@ -125,4 +163,12 @@ p#feedback {
   .main-button {
     margin: 0 auto;
   } 
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 70%;
 }
