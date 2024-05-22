@@ -31,9 +31,18 @@
 
     // 트위터 공유 버튼 클릭 이벤트 핸들러
     document.getElementById('shareButton').addEventListener('click', function() {
-      var hashtags = 'FCFW,니콜라스'; // 원하는 해시태그 추가
-            var shareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&hashtags=' + encodeURIComponent(hashtags);
-            window.open(shareUrl, '_blank');
+      var shareUrl = 'https://twitter.com/intent/tweet';
+            var tweetText = 'Check out this random image!';
+            var hashtags = 'FCFW,RandomImage'; // 원하는 해시태그 추가
+
+            // 트윗에 이미지를 첨부하기 위해 FormData를 사용하여 이미지 파일을 전송합니다.
+            var formData = new FormData();
+            formData.append('text', tweetText);
+            formData.append('hashtags', hashtags);
+            formData.append('media', randomImage.src);
+
+            // 트윗 공유 URL에 FormData를 붙여서 새 창으로 열어줍니다.
+            window.open(shareUrl + '?' + new URLSearchParams(formData), '_blank');
         });
 </script>
 </body>

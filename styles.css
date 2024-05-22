@@ -15,6 +15,14 @@ body {
 
 }
 
+.header-content, .footer-content {
+  width: 100%;
+}
+
+.header-img, .footer-img {
+  width: 100%;
+}
+
 a {
   text-decoration: none; /* 링크 텍스트의 밑줄 제거 */
 }
