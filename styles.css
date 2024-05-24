@@ -9,18 +9,82 @@ body {
   background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
   background-position: center; /* 이미지를 가운데 정렬 */
   height: 100vh; /* 화면의 높이에 맞게 설정 */
-  display: block;
+  display: flex;
+  flex-direction: column;
   /*justify-content: center;*/
   align-items: center; /* 요소를 수직 가운데 정렬하기 위해 추가 */
 
 }
 
+.wrapper {
+  flex: 1; /* 페이지의 나머지 공간을 채우도록 설정 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#header-container,
+#footer-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* 적절한 높이로 조정해주세요 */
+  flex-shrink: 0; /* 헤더와 푸터가 유연하게 크기가 조절되지 않도록 설정 */
+}
+
+.header-content,
+.footer-content {
+  background-size: cover; /* 배경 이미지를 가득 채우도록 설정 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
+  background-position: center; /* 이미지를 가운데 정렬 */
+}
+
 .header-content, .footer-content {
   width: 100%;
+  flex-shrink: 0; /* 헤더가 축소되지 않도록 설정 */
 }
 
 .header-img, .footer-img {
   width: 100%;
+  height: auto; /* 이미지의 비율을 유지하며 높이 자동 설정 */
+}
+
+.header-img-detail,
+.footer-img-detail {
+ /* position: absolute; */
+  top: 0;
+  height: 1%; /* 수정: 이미지가 요소의 높이의 80% 차지하도록 변경 */
+  z-index: 0; /* 배경 이미지보다 아래에 위치하도록 설정 */
+}
+
+.header-left, .footer-left {
+  position: absolute;
+  top: 0%; /* 위에서 10px 위치 */
+  left: 0%; /* 왼쪽에서 10px 위치 */
+  width: 20%;
+}
+
+.header-right, .footer-right {
+  position: absolute;
+   top: 0%; /* 위에서 10px 위치 */
+  right: 10px; /* 왼쪽에서 10px 위치 */
+  width: 20%;
+}
+
+
+.container {
+  flex: 1; /* 이 부분이 중요합니다. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로로 가운데 정렬 */
+  align-items: center; /* 가로로 가운데 정렬 */
 }
 
 a {
