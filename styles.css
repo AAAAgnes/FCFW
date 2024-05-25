@@ -62,18 +62,26 @@ body {
   top: 0;
   height: 1%; /* 수정: 이미지가 요소의 높이의 80% 차지하도록 변경 */
   z-index: 0; /* 배경 이미지보다 아래에 위치하도록 설정 */
+  width: 100%;
 }
 
 .header-left, .footer-left {
   position: absolute;
-  top: 0%; /* 위에서 10px 위치 */
+  top: 15%; /* 위에서 10px 위치 */
   left: 0%; /* 왼쪽에서 10px 위치 */
+  width: 20%;
+}
+
+.footer-center {
+  position: absolute;
+  top: 15%; /* 위에서 10px 위치 */
+  left: 40%; /* 왼쪽에서 10px 위치 */
   width: 20%;
 }
 
 .header-right, .footer-right {
   position: absolute;
-   top: 0%; /* 위에서 10px 위치 */
+  top: 2%; /* 위에서 10px 위치 */
   right: 10px; /* 왼쪽에서 10px 위치 */
   width: 20%;
 }
@@ -86,6 +94,19 @@ body {
   justify-content: center; /* 세로로 가운데 정렬 */
   align-items: center; /* 가로로 가운데 정렬 */
 }
+
+.info {
+  margin-bottom: 10px;
+}
+
+.info-img{
+  /*position: absolute; */
+  top: 0;
+  height: 1%; /* 수정: 이미지가 요소의 높이의 80% 차지하도록 변경 */
+  z-index: 0; /* 배경 이미지보다 아래에 위치하도록 설정 */
+  width: 100%;
+}
+
 
 a {
   text-decoration: none; /* 링크 텍스트의 밑줄 제거 */
@@ -108,9 +129,55 @@ a {
   .main-logo a img {
     width: 60%;
   }
+
+  .container {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    
+  }
+
+  .info {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    max-width: 80%;
+  }
+
+  .container-i {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+  }
 }
 
 .container {
+  padding: 90px;
+  border-radius: 10px;
+  margin: 100px auto; /* 페이지 중앙에 정렬 */
+  max-width: 400px;
+  text-align: center;
+
+  /* 내부 요소의 인라인 블록화 */
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;
+  */
+  display: inline-block; /* 가로로 배치되도록 설정 */
+  vertical-align: top; /* 위쪽 정렬 */
+}
+
+.info {
+  padding: 90px;
+  border-radius: 10px;
+  margin: 100px auto; /* 페이지 중앙에 정렬 */
+  max-width: 60%;
+  text-align: center;
+
+  /* 내부 요소의 인라인 블록화 */
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;
+  */
+  display: inline-block; /* 가로로 배치되도록 설정 */
+  vertical-align: top; /* 위쪽 정렬 */
+}
+
+.container-i {
   padding: 90px;
   border-radius: 10px;
   margin: 100px auto; /* 페이지 중앙에 정렬 */
@@ -142,14 +209,15 @@ a {
   margin: 0 auto;
 }
 
-.container h2 {
-  max-width: 700px;
+.info h2 {
+  max-width: 1000px;
+  width: 100%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경의 알파값을 0.5로 설정 */
 }
 
-.container p {
-  max-width: 700px;
+.info p {
+  max-width: 1000px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경의 알파값을 0.5로 설정 */
 }
@@ -235,6 +303,20 @@ p#feedback {
   .main-button {
     margin: 0 auto;
   } 
+
+  .container {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    
+  }
+
+  .info {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    max-width: 80%;
+  }
+
+  .container-i {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+  }
 }
 
 .image-container {
