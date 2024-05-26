@@ -61,8 +61,10 @@
 
     // 이미지 요소에 경로 설정
     var randomImage = document.getElementById('randomImage');
+    console.log(randomImage)
+    console.log(imageNumber)
     randomImage.src = imagePath;
-
+    console.log(randomImage.src)
     // 트위터 공유 버튼 클릭 이벤트 핸들러
     document.getElementById('shareButton').addEventListener('click', function() {
       var shareUrl = 'https://twitter.com/intent/tweet';
