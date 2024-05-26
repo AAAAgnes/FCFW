@@ -35,76 +35,133 @@ body {
 #footer-container {
   position: relative;
   width: 100%;
-  height: auto; /* 적절한 높이로 조정해주세요 */
-  flex-shrink: 0; /* 헤더와 푸터가 유연하게 크기가 조절되지 않도록 설정 */
+  flex-shrink: 0; 
 }
 
 .header-content,
 .footer-content {
+  width: 100%;
   background-size: cover; /* 배경 이미지를 가득 채우도록 설정 */
   background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
   background-position: center; /* 이미지를 가운데 정렬 */
 }
 
-.header-content, .footer-content {
-  width: 100%;
-  flex-shrink: 0; /* 헤더가 축소되지 않도록 설정 */
-}
-
 .header-img, .footer-img {
   width: 100%;
-  height: auto; /* 이미지의 비율을 유지하며 높이 자동 설정 */
+  height: auto;
 }
 
+/*
 .header-img-detail,
 .footer-img-detail {
- /* position: absolute; */
   top: 0;
-  height: 1%; /* 수정: 이미지가 요소의 높이의 80% 차지하도록 변경 */
-  z-index: 0; /* 배경 이미지보다 아래에 위치하도록 설정 */
+  height: 1%; 
+  z-index: 0;
   width: 100%;
 }
+*/
 
-.header-left, .footer-left {
-  position: absolute;
-  top: 15%; /* 위에서 10px 위치 */
-  left: 0%; /* 왼쪽에서 10px 위치 */
-  width: 20%;
+.header-img-detail, .footer-img-detail {
+  max-width: 70%;
+  height: auto;
 }
 
-.footer-center {
+.header-left, .header-right, .footer-left, .footer-right {
   position: absolute;
-  top: 15%; /* 위에서 10px 위치 */
-  left: 40%; /* 왼쪽에서 10px 위치 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*
+.header-left, .footer-left {
+  position: absolute;
+  top: 15%; 
+  left: 0%; 
   width: 20%;
+}
+*/
+
+.header-left, .footer-left {
+  left: 10px;
 }
 
 .header-right, .footer-right {
+  right: 10px;
+}
+/*
+.footer-center {
   position: absolute;
-  top: 2%; /* 위에서 10px 위치 */
-  right: 10px; /* 왼쪽에서 10px 위치 */
+  top: 15%;
+  left: 40%; 
   width: 20%;
 }
+*/
 
+.footer-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .container {
-  flex: 1; /* 이 부분이 중요합니다. */
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 세로로 가운데 정렬 */
-  align-items: center; /* 가로로 가운데 정렬 */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .info {
+  position: relative;
   margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
 }
 
-.info-img{
-  /*position: absolute; */
+.info-image{
+  position: absolute;
   top: 0;
-  height: 1%; /* 수정: 이미지가 요소의 높이의 80% 차지하도록 변경 */
-  z-index: 0; /* 배경 이미지보다 아래에 위치하도록 설정 */
+  left: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.info-img-left{
+  max-width: 50%;
+  height: 50%;
+}
+
+.info-img-right {
+  transform: translateY(50%);
+  max-width: 50%;
+  height: 50%;
+}
+
+/*
+.inffo{
+  border-radius: 10px;
+  margin: 50px auto; 
+  max-width: 100%;
+  text-align: center;
+  display: inline-block; 
+  vertical-align: top; 
+}
+*/
+
+.inffo {
+  flex: 1;
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
 }
 
 
@@ -126,6 +183,17 @@ a {
 }
 
 @media screen and (max-width: 757px) {
+
+  .info-image {
+    flex-direction: column;
+    top: 120%;
+  }
+
+  .info-img-left, .info-img-right {
+    max-width: 90%;
+    margin: 10px auto;
+  }
+
   .main-logo a img {
     width: 60%;
   }
@@ -146,7 +214,7 @@ a {
 }
 
 .container {
-  padding: 90px;
+
   border-radius: 10px;
   margin: 100px auto; /* 페이지 중앙에 정렬 */
   max-width: 400px;
@@ -162,19 +230,7 @@ a {
 }
 
 .info {
-  padding: 90px;
-  border-radius: 10px;
-  margin: 100px auto; /* 페이지 중앙에 정렬 */
-  max-width: 60%;
-  text-align: center;
-
-  /* 내부 요소의 인라인 블록화 */
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  */
-  display: inline-block; /* 가로로 배치되도록 설정 */
-  vertical-align: top; /* 위쪽 정렬 */
+  margin-top: 20px;
 }
 
 .container-i {
@@ -193,33 +249,26 @@ a {
   vertical-align: top; /* 위쪽 정렬 */
 }
 
-.container-info {
-  padding: 90px;
-  border-radius: 10px;
-  margin: 100px auto; /* 페이지 중앙에 정렬 */
-  max-width: 700px;
-  text-align: center;
-
-  display: block;
-  background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경의 알파값을 0.5로 설정 */
-}
-
 /* 내부 요소의 가로 중앙 정렬 */
 .container img {
   margin: 0 auto;
 }
 
 .info h2 {
+  margin: 0 auto;
+  margin-top: 10%;
   max-width: 1000px;
   width: 100%;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경의 알파값을 0.5로 설정 */
+  background-color: rgba(255, 255, 255, 0.9); 
 }
 
 .info p {
+  margin: 0 auto;
+  margin-top: 30px;
   max-width: 1000px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경의 알파값을 0.5로 설정 */
+  background-color: rgba(255, 255, 255, 0.9); 
 }
 
 input[type="text"] {
@@ -236,7 +285,7 @@ button {
   cursor: pointer;
 
   display: block; /* 세로로 배치되도록 설정 */
-  margin: 10px auto; /* 중앙 정렬 */
+  margin: 30px auto; /* 중앙 정렬 */
 }
 
 button:hover {
