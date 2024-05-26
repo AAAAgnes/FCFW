@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="幸運流水">
+<meta name="twitter:description" content="幸運流水">
+<meta name="twitter:image" content="">
+
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>FCFW</title>
@@ -61,25 +67,32 @@
 
     // 이미지 요소에 경로 설정
     var randomImage = document.getElementById('randomImage');
-    console.log(randomImage)
-    console.log(imageNumber)
+
     randomImage.src = imagePath;
-    console.log(randomImage.src)
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // 페이지가 로드된 후 실행될 코드
+      var params = new URLSearchParams(window.location.search);
+      var imageNumber = params.get('image');
+      var imagePath = "/images/random/" + imageNumber + ".png";
+      var twitterImageTag = document.getElementById("twitterImage");
+      twitterImageTag.setAttribute("content", imagePath);
+    });
+
     // 트위터 공유 버튼 클릭 이벤트 핸들러
     document.getElementById('shareButton').addEventListener('click', function() {
       var shareUrl = 'https://twitter.com/intent/tweet';
             var tweetText = '오늘의 운세는';
             var hashtags = '幸運_流水 '; // 원하는 해시태그 추가
+       // 트위터 공유 URL에 쿼리 매개변수를 추가하여 새 창으로 열어줍니다.
+       var queryString = new URLSearchParams({
+        text: tweetText,
+        hashtags: hashtags,
+        url: window.location.href
+      });
 
-            // 트윗에 이미지를 첨부하기 위해 FormData를 사용하여 이미지 파일을 전송합니다.
-            var formData = new FormData();
-            //formData.append('text', tweetText);
-            formData.append('hashtags', hashtags);
-            formData.append('media', randomImage.src);
-
-            // 트윗 공유 URL에 FormData를 붙여서 새 창으로 열어줍니다.
-            window.open(shareUrl + '?' + new URLSearchParams(formData), '_blank');
-        });
+      window.open(shareUrl + '?' + queryString, '_blank');
+});
 </script>
 </body>
 </html>
