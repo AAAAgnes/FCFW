@@ -11,9 +11,7 @@ body {
   height: 100vh; /* 화면의 높이에 맞게 설정 */
   display: flex;
   flex-direction: column;
-  /*justify-content: center;*/
   align-items: center; /* 요소를 수직 가운데 정렬하기 위해 추가 */
-
 }
 
 .wrapper {
@@ -35,7 +33,7 @@ body {
 #footer-container {
   position: relative;
   width: 100%;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .header-content,
@@ -51,18 +49,8 @@ body {
   height: auto;
 }
 
-/*
-.header-img-detail,
-.footer-img-detail {
-  top: 0;
-  height: 1%; 
-  z-index: 0;
-  width: 100%;
-}
-*/
-
 .header-img-detail, .footer-img-detail {
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
 }
 
@@ -71,14 +59,6 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-/*
-.header-left, .footer-left {
-  position: absolute;
-  top: 15%; 
-  left: 0%; 
-  width: 20%;
-}
-*/
 
 .header-left, .footer-left {
   left: 10px;
@@ -87,14 +67,6 @@ body {
 .header-right, .footer-right {
   right: 10px;
 }
-/*
-.footer-center {
-  position: absolute;
-  top: 15%;
-  left: 40%; 
-  width: 20%;
-}
-*/
 
 .footer-center {
   position: absolute;
@@ -104,26 +76,52 @@ body {
 }
 
 .container {
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 100px auto; /* 페이지 중앙에 정렬 */
+  text-align: center;
+  display: inline-block; /* 가로로 배치되도록 설정 */
+  vertical-align: top; /* 위쪽 정렬 */
 }
 
 .info {
-  position: relative;
   margin-bottom: 10px;
   width: 100%;
   height: 100%;
 }
 
-.info-image{
+.info-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.info-img-left {
+  max-width: 50%;
+  height: 30%;
+}
+
+.info-img-right {
+  transform: translateY(50%);
+  max-width: 30%;
+  height: 30%;
+}
+
+.event-image {
+  position: absolute;
+  top: 0;
+  left: -40%;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -132,27 +130,10 @@ body {
   z-index: -1;
 }
 
-.info-img-left{
-  max-width: 50%;
-  height: 50%;
+.event-img-left {
+  width: 20%;
+  height: auto;
 }
-
-.info-img-right {
-  transform: translateY(50%);
-  max-width: 50%;
-  height: 50%;
-}
-
-/*
-.inffo{
-  border-radius: 10px;
-  margin: 50px auto; 
-  max-width: 100%;
-  text-align: center;
-  display: inline-block; 
-  vertical-align: top; 
-}
-*/
 
 .inffo {
   flex: 1;
@@ -164,14 +145,20 @@ body {
   border-radius: 10px;
 }
 
-
 a {
   text-decoration: none; /* 링크 텍스트의 밑줄 제거 */
 }
 
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 70%;
+}
+
 @media screen and (min-width: 1200px) {
-  body{
-   /* display: flex; */
+  body {
     justify-content: center;
   }
 }
@@ -183,7 +170,6 @@ a {
 }
 
 @media screen and (max-width: 757px) {
-
   .info-image {
     flex-direction: column;
     top: 120%;
@@ -200,7 +186,7 @@ a {
 
   .container {
     padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    
+    max-width: 80%;
   }
 
   .info {
@@ -208,82 +194,31 @@ a {
     max-width: 80%;
   }
 
+  .inffo {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    max-width: 80%;
+  }
+
   .container-i {
     padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
   }
+
+  .main-logo {
+    margin: 0 auto;
+  }
+
+  .main-button {
+    margin: 0 auto;
+  }
 }
 
-.container {
-
-  border-radius: 10px;
-  margin: 100px auto; /* 페이지 중앙에 정렬 */
-  max-width: 400px;
-  text-align: center;
-
-  /* 내부 요소의 인라인 블록화 */
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  */
-  display: inline-block; /* 가로로 배치되도록 설정 */
-  vertical-align: top; /* 위쪽 정렬 */
-}
-
-.info {
-  margin-top: 20px;
-}
-
-.container-i {
-  padding: 90px;
-  border-radius: 10px;
-  margin: 100px auto; /* 페이지 중앙에 정렬 */
-  max-width: 400px;
-  text-align: center;
-
-  /* 내부 요소의 인라인 블록화 */
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  */
-  display: inline-block; /* 가로로 배치되도록 설정 */
-  vertical-align: top; /* 위쪽 정렬 */
-}
-
-/* 내부 요소의 가로 중앙 정렬 */
-.container img {
-  margin: 0 auto;
-}
-
-.info h2 {
-  margin: 0 auto;
-  margin-top: 10%;
-  max-width: 1000px;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.9); 
-}
-
-.info p {
-  margin: 0 auto;
-  margin-top: 30px;
-  max-width: 1000px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.9); 
-}
-
-input[type="text"] {
-  padding: 8px;
-  margin: 10px;
-  width: 200px;
-}
-
+/* 버튼 스타일 */
 button {
   padding: 8px 16px;
   background-color: #ff28eb;
   color: white;
   border: none;
   cursor: pointer;
-
   display: block; /* 세로로 배치되도록 설정 */
   margin: 30px auto; /* 중앙 정렬 */
 }
@@ -292,32 +227,28 @@ button:hover {
   background-color: #30ff00;
 }
 
-p#feedback {
-  margin-top: 20px;
-}
-
 .main-logo {
-  display: flex;
-  color: white;
-  border: none;
-  width: 70%;
-}
-
-#event{
   display: flex;
   color: white;
   border: none;
   width: 30%;
 }
 
-#clickhere{
+#event {
+  display: flex;
+  color: white;
+  border: none;
+  width: 60%;
+}
+
+#clickhere {
   display: flex;
   color: white;
   border: none;
   width: 70%;
 }
 
-#eventBox{
+#eventBox {
   display: flex;
   color: white;
   border: none;
@@ -340,38 +271,29 @@ p#feedback {
   display: flex;
   color: white;
   border: none;
-  width: 40%;
+  width: 35%;
 }
 
-
-@media screen and (max-width: 757px) {
-  .main-logo {
-    margin: 0 auto;
-  }
-
-  .main-button {
-    margin: 0 auto;
-  } 
-
-  .container {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    
-  }
-
-  .info {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    max-width: 80%;
-  }
-
-  .container-i {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-  }
-}
-
-.image-container {
+/* 텍스트 스타일 */
+.info h2, .info p {
+  margin: 0 auto;
+  margin-top: 10%;
+  max-width: 1000px;
+  width: 100%;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.image-container img {
-  max-width: 70%;
+p#feedback {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin: 10px;
+  width: 200px;
+}
+
+.container img {
+  margin: 0 auto;
 }
