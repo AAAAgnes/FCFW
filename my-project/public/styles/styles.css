@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: '굴림', Gulim, sans-serif;
   text-align: center;
   background-image: url('/images/background.png'); /* 배경 이미지 추가 */
   background-size: cover; /* 이미지를 화면에 맞게 늘어나고 줄어들도록 설정 */
@@ -82,7 +82,6 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin: 100px auto; /* 페이지 중앙에 정렬 */
   text-align: center;
   display: inline-block; /* 가로로 배치되도록 설정 */
   vertical-align: top; /* 위쪽 정렬 */
@@ -99,7 +98,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 95%;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
@@ -108,14 +107,14 @@ body {
 }
 
 .info-img-left {
-  max-width: 50%;
-  height: 30%;
+  max-width: 80%;
+  height: 60%;
 }
 
 .info-img-right {
-  transform: translateY(50%);
-  max-width: 30%;
-  height: 30%;
+  transform: translateY(120%);
+  max-width: 50%;
+  height: 40%;
 }
 
 .event-image {
@@ -131,7 +130,7 @@ body {
 }
 
 .event-img-left {
-  width: 20%;
+  width: 15%;
   height: auto;
 }
 
@@ -157,58 +156,9 @@ a {
   max-width: 70%;
 }
 
-@media screen and (min-width: 1200px) {
-  body {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .main-logo a img {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 757px) {
-  .info-image {
-    flex-direction: column;
-    top: 120%;
-  }
-
-  .info-img-left, .info-img-right {
-    max-width: 90%;
-    margin: 10px auto;
-  }
-
-  .main-logo a img {
-    width: 60%;
-  }
-
-  .info {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    max-width: 80%;
-  }
-
-  .inffo {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    max-width: 80%;
-  }
-
-  .container-i {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-  }
-
-  .main-logo {
-    margin: 0 auto;
-  }
-
-  .main-button {
-    margin: 0 auto;
-  }
-
-  .container{
-    display: block;
-  }
+#randomImage{
+  width: 25%;
+  margin-top: 10%;
 }
 
 /* 버튼 스타일 */
@@ -233,33 +183,41 @@ button:hover {
   width: 30%;
 }
 
+#mainEvent {
+  display: flex;
+  color: white;
+  border: none;
+  width: 55%;
+  margin-top: 10%;
+}
+
 #event {
-  display: flex;
-  color: white;
-  border: none;
-  width: 60%;
-}
-
-#clickhere {
-  display: flex;
-  color: white;
-  border: none;
-  width: 70%;
-}
-
-#eventBox {
   display: flex;
   color: white;
   border: none;
   width: 30%;
 }
 
+#clickhere {
+  display: flex;
+  color: white;
+  border: none;
+  width: 45%;
+}
+
+#eventBox {
+  display: flex;
+  color: white;
+  border: none;
+  width: 25%;
+}
+
 @keyframes shake {
-  0% { transform: translateY(-3px); }
-  25% { transform: translateY(3px); }
-  50% { transform: translateY(-3px); }
-  75% { transform: translateY(3px); }
-  100% { transform: translateY(-3px); }
+  0% { transform: translateY(-6px); }
+  25% { transform: translateY(6px); }
+  50% { transform: translateY(-6px); }
+  75% { transform: translateY(6px); }
+  100% { transform: translateY(-6px); }
 }
 
 .event-box:hover {
@@ -276,9 +234,9 @@ button:hover {
 /* 텍스트 스타일 */
 .info h2, .info p {
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 4%;
   max-width: 1000px;
-  width: 100%;
+  width: 95%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -295,4 +253,121 @@ input[type="text"] {
 
 .container img {
   margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1200px) {
+  body {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .main-logo a img {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .info-image {
+    /*flex-direction: column;*/
+    top: 00%;
+    height: 50%;
+  }
+
+  .info-img-left, .info-img-right {
+    max-width: 90%;
+    margin: 30px auto;
+  }
+
+  .info-img-right {
+    transform: translateY(270%);
+  }
+  .main-logo a img {
+    width: 60%;
+  }
+
+  .info {
+    padding: 0px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .info h2{
+    margin-top: 45%;
+  }
+
+  .container-i {
+    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+  }
+
+  .main-logo {
+    margin: 0 auto;
+  }
+
+  .main-button {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .container{
+    display: block;
+    margin: auto;
+  }
+
+  .header-left, .header-right, .footer-left, .footer-right{
+    width: 30%
+  }
+
+  .footer-center{
+    width: 30%;
+  }
+
+  #randomImage{
+    width: 80%;
+    margin-top: 10%;
+  }
+
+  .event-img-left{
+    width: 30%;
+  }
+
+  #mainEvent {
+    display: flex;
+    color: white;
+    border: none;
+    width: 90%;
+    margin-top: 20%;
+  }
+
+  #event {
+    display: flex;
+    color: white;
+    border: none;
+    width: 45%;
+    margin-top: 20%;
+  }
+  
+  #clickhere {
+    display: flex;
+    color: white;
+    border: none;
+    width: 65%;
+  }
+  
+  #eventBox {
+    display: flex;
+    color: white;
+    border: none;
+    width: 45%;
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    /*테블릿 세로*/
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*테블릿 가로*/
+}
 }
