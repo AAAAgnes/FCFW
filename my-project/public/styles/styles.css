@@ -184,11 +184,6 @@ a {
     width: 60%;
   }
 
-  .container {
-    padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
-    max-width: 80%;
-  }
-
   .info {
     padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
     max-width: 80%;
@@ -209,6 +204,10 @@ a {
 
   .main-button {
     margin: 0 auto;
+  }
+
+  .container{
+    display: block;
   }
 }
 
