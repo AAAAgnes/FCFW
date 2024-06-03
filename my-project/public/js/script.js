@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1부터 44까지의 랜덤한 숫자 생성
     var randomNumber = Math.floor(Math.random() * 48) + 1;
     // 랜덤한 이미지가 있는 페이지 주소 생성
-    var pageURL = "luck.html?image=" + randomNumber;
-    // 새로운 페이지로 이동
-    window.location.href = pageURL;
+    var pageURL = "/luck?image=" + randomNumber;
+        // 새로운 페이지로 이동
+        window.location.href = pageURL;
   });
 });
 
