@@ -11,6 +11,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// 라우트 설정
+app.get('/luck', (req, res) => {
+  const imageNumber = req.query.image;
+  res.render('luck', { imageNumber: imageNumber });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

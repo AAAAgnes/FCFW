@@ -362,12 +362,202 @@ input[type="text"] {
     width: 45%;
   }
 
-
+}
   @media (min-width: 768px) and (max-width: 991px) {
     /*테블릿 세로*/
+    .info-image {
+      /*flex-direction: column;*/
+      top: 00%;
+      height: 50%;
+    }
+  
+    .info-img-left, .info-img-right {
+      max-width: 90%;
+      margin: 30px auto;
+    }
+  
+    .info-img-right {
+      transform: translateY(270%);
+    }
+    .main-logo a img {
+      width: 60%;
+    }
+  
+    .info {
+      padding: 0px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .info h2{
+      margin-top: 45%;
+    }
+  
+    .container-i {
+      padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    }
+  
+    .main-logo {
+      margin: 0 auto;
+    }
+  
+    .main-button {
+      margin: 0 auto;
+      width: 40%;
+    }
+  
+    .container{
+      display: block;
+      margin: auto;
+    }
+  
+    .header-left, .header-right, .footer-left, .footer-right{
+      width: 30%
+    }
+  
+    .footer-center{
+      width: 30%;
+    }
+  
+    #randomImage{
+      width: 60%;
+      margin-top: 10%;
+    }
+    
+    .event-image{
+      left: -35%;
+    }
+    .event-img-left{
+      width: 30%;
+    }
+  
+    #mainEvent {
+      display: flex;
+      color: white;
+      border: none;
+      width: 60%;
+      margin-top: 20%;
+    }
+  
+    #event {
+      display: flex;
+      color: white;
+      border: none;
+      width: 30%;
+      margin-top: 20%;
+    }
+    
+    #clickhere {
+      display: flex;
+      color: white;
+      border: none;
+      width: 55%;
+    }
+    
+    #eventBox {
+      display: flex;
+      color: white;
+      border: none;
+      width: 25%;
+    }
+  
+  
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     /*테블릿 가로*/
-}
+    .info-image {
+      /*flex-direction: column;*/
+      top: 00%;
+      height: 90%;
+    }
+  
+    .info-img-left, .info-img-right {
+      max-width: 100%;
+     /* margin: 0px auto;*/
+    }
+  
+    .info-img-right {
+      transform: translateY(150%);
+    }
+    .main-logo a img {
+      width: 60%;
+    }
+  
+    .info {
+      padding: 0px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .info h2{
+      margin-top: 15%;
+    }
+  
+    .container-i {
+      padding: 40px; /* 모바일 화면에서는 패딩 값을 줄입니다. */
+    }
+  
+    .main-logo {
+      margin: 0 auto;
+    }
+  
+    .main-button {
+      margin: 0 auto;
+      width: 20%;
+    }
+  
+    .container{
+      display: block;
+      margin: auto;
+    }
+  
+    .header-left, .header-right, .footer-left, .footer-right{
+      width: 20%
+    }
+  
+    .footer-center{
+      width: 30%;
+    }
+  
+    #randomImage{
+      width: 80%;
+      margin-top: 10%;
+    }
+  
+    .event-img-left{
+      width: 15%;
+    }
+  
+    #mainEvent {
+      display: flex;
+      color: white;
+      border: none;
+      width: 30%;
+      margin-top: 10%;
+    }
+  
+    #event {
+      display: flex;
+      color: white;
+      border: none;
+      width: 17%;
+    }
+    
+    #clickhere {
+      display: flex;
+      color: white;
+      border: none;
+      width: 30%;
+    }
+    
+    #eventBox {
+      display: flex;
+      color: white;
+      border: none;
+      width: 15%;
+    }
+  
+  
 }
